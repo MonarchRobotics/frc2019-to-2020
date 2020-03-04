@@ -27,14 +27,22 @@ public class DriveMecanum extends Command {
   // protected void initialize() {
   // }
 
+
+  public double accelerationCurve(double raw)
+  {
+    double iReturn = Math.sin(Math.PI/2*raw);
+    return iReturn;
+  }
+
+
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
     
     double x, y, twist;
-    x = OI.deadZone(OI.controller.getX(GenericHID.Hand.kLeft), RobotMap.getTranslationaldeadzone());
-    y = OI.deadZone(OI.controller.getY(GenericHID.Hand.kLeft), RobotMap.getTranslationaldeadzone());
-    twist = OI.deadZone(OI.controller.getX(GenericHID.Hand.kRight), RobotMap.getRotationaldeadzone());
+    x = accelerationCurve(OI.deadZone(OI.controller.getX(GenericHID.Hand.kLeft), RobotMap.getTranslationaldeadzone()));
+    y = accelerationCurve(OI.deadZone(OI.controller.getY(GenericHID.Hand.kLeft), RobotMap.getTranslationaldeadzone()));
+    twist = accelerationCurve(OI.deadZone(OI.controller.getX(GenericHID.Hand.kRight), RobotMap.getRotationaldeadzone()));
 
     System.out.println("X:"+x);
     Robot.drivetrain.getDrivetrain().driveCartesian(x, -y, twist);
