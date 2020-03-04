@@ -30,11 +30,13 @@ public class DriveMecanum extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
+    
     double x, y, twist;
     x = OI.deadZone(OI.controller.getX(GenericHID.Hand.kLeft), RobotMap.getTranslationaldeadzone());
     y = OI.deadZone(OI.controller.getY(GenericHID.Hand.kLeft), RobotMap.getTranslationaldeadzone());
     twist = OI.deadZone(OI.controller.getX(GenericHID.Hand.kRight), RobotMap.getRotationaldeadzone());
 
+    System.out.println("X:"+x);
     Robot.drivetrain.getDrivetrain().driveCartesian(x, -y, twist);
   }
 

@@ -9,11 +9,12 @@ package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.drive.MecanumDrive;
-import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 import frc.robot.commands.DriveMecanum;
 import com.ctre.phoenix.motorcontrol.NeutralMode;
 
 import com.ctre.phoenix.motorcontrol.can.VictorSPX;
+import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
+
 import edu.wpi.first.wpilibj.PWMVictorSPX;
 
 /**
@@ -23,13 +24,13 @@ public class Drivetrain extends Subsystem {
 
     protected MecanumDrive drive;
 
-    public PWMVictorSPX frontLeft, frontRight, backLeft, backRight;
+    public WPI_VictorSPX frontLeft, frontRight, backLeft, backRight;
 
     public Drivetrain(int frontLeft, int frontRight, int backLeft, int backRight){
-        this.frontLeft = new PWMVictorSPX(frontLeft);
-        this.frontRight = new PWMVictorSPX(frontRight);
-        this.backLeft = new PWMVictorSPX(backLeft);
-        this.backRight = new PWMVictorSPX(backRight);
+        this.frontLeft = new WPI_VictorSPX(frontLeft);
+        this.frontRight = new WPI_VictorSPX(frontRight);
+        this.backLeft = new WPI_VictorSPX(backLeft);
+        this.backRight = new WPI_VictorSPX(backRight);
 
 
         // Invert the left side motors.
