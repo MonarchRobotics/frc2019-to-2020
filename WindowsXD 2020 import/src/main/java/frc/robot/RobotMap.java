@@ -30,16 +30,7 @@ public class RobotMap {
 
   private final static int atharvsArm = 0;
 
-  private static final int atharvWalker = 2;
-  private static final int atharvPushUpFront = 4;
-  private static final int atharvPushUpBack = 3;
-
-  private static final int openChannel = 1;
-  private static final int releaseChannel = 2;
-  private static final int atharvsMouth = 0;
-
-  private static final int atharvsBackMuscle= 1;
-  private static final int atharvsChestMuscle = 9;
+  
 
   public static int getBackLeft() {
       return atharvsbackLeftLeg;
@@ -54,26 +45,6 @@ public class RobotMap {
       return atharvsfrontRightLeg;
   }
 
-  public static int getLowerWheel() {
-      return atharvWalker;
-  }
-  public static int getRaiseFront() {
-      return atharvPushUpFront;
-  }
-  public static int getRaiseBack() {
-    return atharvPushUpBack;
-  }
-
-  public static int getOpenChannel() {
-      return openChannel;
-  }
-
-  public static int getReleaseChannel() {
-      return releaseChannel;
-  }
-  public static int getCompressor() {
-      return atharvsMouth;
-  }
 
   public static double getRotationaldeadzone() {
     return rotationalDeadZone;
@@ -87,12 +58,7 @@ public class RobotMap {
       return atharvsArm;
   }
 
-  public static int getRearLimitSwitch() {
-      return atharvsBackMuscle;
-  }
-  public static int getFrontLimitSwitch() {
-      return atharvsChestMuscle;
-  }
+  
 
   // If you are using multiple modules, make sure to define both the port
   // number and the module. For example you with a rangefinder:
